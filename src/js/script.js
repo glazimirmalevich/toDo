@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContentTotal = document.querySelector(".main__content__total");
     const mainContentClear = document.querySelector(".main__content__clear");
     let counter = 0;
+    let arrayOfTodos = [];
     addTodo.addEventListener('click', () => {
         if (inputTodo.value !== '' && inputTodo !== undefined && inputTodo.value.includes(">") !== true) {
             todoList.insertAdjacentHTML('afterbegin', `
@@ -12,16 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
             `)
             // localStorage.setItem();
             inputTodo.value = '';
-            const addClear = document.querySelectorAll(".main__content__list__item");
-            if (addClear.length >= 1) {
+            const addTotal = document.querySelectorAll(".main__content__list__item");
+            if (addTotal.length >= 1) {
                 counter++;
             }
             mainContentTotal.innerHTML = `<p class="active__todos">You have ${counter} active todos</p>`;
+            // localStorage.setItem('allTodos', addTotal);
+            const allTodos = document.querySelectorAll('.main__content__list__item');
+            console.log(allTodos);
         } else {
             alert("Введено неправильное значение");
             inputTodo.value = '';
         }
-
     });
     todoList.addEventListener('click', (event) => {
         if (event.target.classList.contains('main__content__list__trash')) {
@@ -50,4 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
             mainContentTotal.innerHTML = `<p class="active__todos">You have ${counter} active todos</p>`;
         });
     });
+
 });

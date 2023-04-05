@@ -48,24 +48,28 @@ body {
   flex-direction: row;
   gap: 10px;
   width: 100%;
+  height: 40px;
 }
 .main__content__input {
   outline: none;
   border: thin solid gray;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
 }
 .main__content__add {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
+  width: 10%;
   border: none;
   border-radius: 5px;
-  background-color: purple;
+  background-color: #801b90;
   color: white;
   cursor: pointer;
+}
+.main__content__add:hover {
+  background-color: #5a1365;
 }
 .main__content__list {
   margin-top: 10px;
@@ -86,6 +90,9 @@ body {
   padding: 0 5px 0 5px;
   word-break: break-all;
 }
+.main__content__list__item_done {
+  background-color: greenyellow;
+}
 .main__content__list__item_done :nth-child(2) {
   text-decoration: line-through;
 }
@@ -101,11 +108,14 @@ body {
 }
 .main__content__clear {
   margin: 10px 0 0 0;
-  background: purple;
+  background: #801b90;
   padding: 10px;
   color: white;
   cursor: pointer;
   border-radius: 5px;
+}
+.main__content__clear:hover {
+  background-color: #5a1365;
 }
 
 .active__todos {
