@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContentClear = document.querySelector(".main__content__clear");
     let counter = 0;
     let arrayOfTodos = [];
+    let savedTodos = JSON.parse(localStorage.getItem('todos'));
+
     addTodo.addEventListener('click', () => {
         if (inputTodo.value !== '' && inputTodo !== undefined && inputTodo.value.includes(">") !== true) {
             todoList.insertAdjacentHTML('afterbegin', `
@@ -18,9 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 counter++;
             }
             mainContentTotal.innerHTML = `<p class="active__todos">You have ${counter} active todos</p>`;
-            // localStorage.setItem('allTodos', addTotal);
-            const allTodos = document.querySelectorAll('.main__content__list__item');
-            console.log(allTodos);
         } else {
             alert("Введено неправильное значение");
             inputTodo.value = '';
